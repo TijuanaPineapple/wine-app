@@ -1,10 +1,10 @@
 import Wine from "./Wine"
 
-const Wines = ({ wines }) => {
+const Wines = ({ wines, onDelete }) => {
   return (
     <>
       {wines.map((wine) => (
-        <Wine key={wine.id} wine={wine} />
+        <Wine key={wine.id} wine={wine} onDelete={onDelete} />
       ))}
     </>
   )

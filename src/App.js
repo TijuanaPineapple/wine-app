@@ -29,10 +29,20 @@ function App() {
       reminder: false,
     },
   ])
+
+  // Delete Wine
+  const deleteWine = (id) => {
+    setWines(wines.filter((wine) => wine.id !== id))
+  }
+
   return (
     <div className='container'>
       <Header />
-      <Wines wines={wines} />
+      {wines.length > 0 ? (
+        <Wines wines={wines} onDelete={deleteWine} />
+      ) : (
+        "Time to taste some wine!"
+      )}
     </div>
   )
 }
